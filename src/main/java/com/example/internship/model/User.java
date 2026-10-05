@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -16,19 +17,21 @@ public class User {
 
     private String name;
     private String email;
+    private String phone;
 
-    // Default Constructor (Required by JPA)
+    // Default constructor
     public User() {
     }
 
-    // Parameterized Constructor (Used for creating users quickly)
-    public User(Long id, String name, String email) {
+    // Constructor
+    public User(Long id, String name, String email, String phone) {
         this.id = id;
         this.name = name;
         this.email = email;
+        this.phone = phone;
     }
 
-    // Getters and Setters
+    // ID getter/setter
     public Long getId() {
         return id;
     }
@@ -37,6 +40,7 @@ public class User {
         this.id = id;
     }
 
+    // Name getter/setter
     public String getName() {
         return name;
     }
@@ -45,11 +49,21 @@ public class User {
         this.name = name;
     }
 
+    // Email getter/setter
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    // Phone getter/setter
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
